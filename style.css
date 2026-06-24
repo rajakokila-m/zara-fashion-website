@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f7f4f0;
-    color: #222;
+    background-color: #f8f8f8;
+    color: #111;
 }
 
 header {
@@ -12,56 +12,175 @@ header {
     padding: 50px 20px;
 }
 
+header h1 {
+    font-size: 42px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
 nav {
     background-color: white;
     text-align: center;
-    padding: 15px;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 nav a {
     color: #111;
     text-decoration: none;
-    margin: 15px;
+    margin: 0 18px;
     font-weight: bold;
 }
 
+nav a:hover {
+    border-bottom: 2px solid #111;
+}
+
 section {
-    padding: 40px 20px;
+    padding: 60px 8%;
     text-align: center;
 }
 
-.cards {
+.home-section {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
+}
+
+.home-video,
+.home-text {
+    flex: 1;
+}
+
+.home-video video {
+    width: 100%;
+    max-width: 500px;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+}
+
+.home-text {
+    text-align: left;
+}
+
+.home-text h2 {
+    font-size: 34px;
+}
+
+.home-text h3 {
+    color: #555;
+}
+
+.home-text p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.home-button {
+    display: inline-block;
+    background-color: #111;
+    color: white;
+    padding: 12px 24px;
+    margin: 10px 10px 0 0;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.gallery {
+    display: flex;
     flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
 }
 
 .card {
-    background-color: white;
-    width: 250px;
-    padding: 25px;
+    width: 280px;
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0 5px;
+}
+
+.card p {
+    padding: 0 15px 20px;
+    line-height: 1.5;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.2);
 }
 
 form {
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+textarea {
+    height: 140px;
 }
 
 button {
     background-color: #111;
     color: white;
-    padding: 12px 20px;
+    padding: 14px 28px;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover,
+.home-button:hover {
+    background-color: #444;
+}
+
+.contact-info {
+    margin-top: 30px;
+    line-height: 1.8;
 }
 
 footer {
@@ -69,4 +188,59 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .home-section,
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-text,
+    .about-text {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .home-video video {
+        height: 330px;
+    }
+}
+
+.back-home {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 24px;
+    background-color: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background-color: #444;
+}
+
+.back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #111;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.back-home:hover {
+    background-color: #444;
 }
