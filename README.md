@@ -10,7 +10,7 @@ This project was created for my university portfolio and GitHub project to demon
 
 ## Live Website
 
-Live site: https://rajakokila-m.github.io/zara-fashion-website/
+Live site:https://rajakokila-p.github.io/zara-fashion-website/
 
 ## User Stories
 
